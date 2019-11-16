@@ -64,7 +64,7 @@ public final class Configurable extends ConfigurableBase<SettingsForm, AtomFileI
 
   @Override
   protected void setFormState(final SettingsForm form, final AtomFileIconsConfig config) {
-//    Objects.requireNonNull(form).setFormState(config);
+    Objects.requireNonNull(form).setFormState(config);
   }
 
   @Override
