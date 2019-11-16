@@ -96,12 +96,12 @@ public class AtomFileIconsConfig implements PersistentStateComponent<AtomFileIco
   }
 
   void applySettings(final SettingsForm form) {
-    setIsEnabledIcons(form.getIsEnabledIcons());
-    setEnabledDirectories(form.getIsEnabledDirectories());
-    setEnabledUIIcons(form.getIsEnabledUIIcons());
-    setMonochromeIcons(form.getIsEnabledMonochromeIcons());
-    setMonochromeColor(form.getMonochromeColor());
-    setEnabledPsiIcons(form.getIsEnabledPsiIcons());
+//    setIsEnabledIcons(form.getIsEnabledIcons());
+//    setEnabledDirectories(form.getIsEnabledDirectories());
+//    setEnabledUIIcons(form.getIsEnabledUIIcons());
+//    setMonochromeIcons(form.getIsEnabledMonochromeIcons());
+//    setMonochromeColor(form.getMonochromeColor());
+//    setEnabledPsiIcons(form.getIsEnabledPsiIcons());
 
     fireChanged();
   }
