@@ -42,6 +42,9 @@
         <applicationConfigurable instance="com.mallowigi.config.Configurable"
                                  groupId="appearance"
                                  id="com.mallowigi.config"/>
+        <applicationConfigurable instance="com.mallowigi.config.Configurable"
+                                 groupId="appearance"
+                                 id="com.mallowigi.userconfig"/>
         <iconProvider implementation="com.mallowigi.icons.HiddenIconProvider" order="first"
                       id="MTHiddenIconProvider"/>
         <iconProvider implementation="com.mallowigi.icons.FileIconProvider" order="first"/>
