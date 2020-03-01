@@ -37,17 +37,22 @@ import com.mallowigi.config.AtomFileIconsConfig;
 import com.mallowigi.icons.associations.Association;
 import com.mallowigi.icons.associations.Associations;
 import com.mallowigi.icons.associations.AssociationsFactory;
+import com.mallowigi.icons.associations.RegexAssociation;
 import icons.MTIcons;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Provider for file icons
  */
 public final class FileIconProvider extends IconProvider implements DumbAware {
 
+  private Associations userCustomAssociations = null;
   private final Associations associations = AssociationsFactory.create("/icon_associations.xml");
   private final Associations dirAssociations = AssociationsFactory.create("/folder_associations.xml");
 
@@ -85,10 +90,19 @@ public final class FileIconProvider extends IconProvider implements DumbAware {
       return null;
     }
 
+    userCustomAssociations = new Associations();
+    final RegexAssociation regex = new RegexAssociation("c#", "api", "/api.svg");
+    List<RegexAssociation> customRegexAssociations = new ArrayList(1);
+    customRegexAssociations.add(regex);
+    userCustomAssociations.setAssociations(customRegexAssociations);
+
     final VirtualFile virtualFile = PsiUtilCore.getVirtualFile(psiElement);
     if (virtualFile != null) {
       final FileInfo file = new VirtualFileInfo(psiElement, virtualFile);
-      icon = getDirectoryIconForAssociation(dirAssociations.findAssociationForFile(file));
+      icon = getDirectoryIconForAssociation(userCustomAssociations.findAssociationForFile(file));
+      if (icon == null) {
+        icon = getDirectoryIconForAssociation(dirAssociations.findAssociationForFile(file));
+      }
     }
     return icon;
   }

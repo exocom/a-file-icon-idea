@@ -62,4 +62,9 @@ public abstract class Association implements Serializable {
   }
 
   public abstract boolean matches(FileInfo file);
+
+  public Association(String name, String icon) {
+    this.icon = icon;
+    this.name = name;
+  }
 }

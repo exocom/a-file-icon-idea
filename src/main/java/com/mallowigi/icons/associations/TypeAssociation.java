@@ -52,4 +52,9 @@ public final class TypeAssociation extends Association {
   public boolean matches(final FileInfo file) {
     return file.getFileType().equals(type);
   }
+
+  public TypeAssociation(String type, String name, String icon) {
+    super(name, icon);
+    this.type = type;
+  }
 }

@@ -37,6 +37,7 @@ import java.util.regex.Pattern;
  * Association for Regular Expressions
  */
 public final class RegexAssociation extends Association {
+
   private static final long serialVersionUID = -8406831867350147465L;
   @Property
   private String pattern;
@@ -54,5 +55,10 @@ public final class RegexAssociation extends Association {
       compiledPattern = Pattern.compile(pattern, Pattern.CASE_INSENSITIVE);
     }
     return compiledPattern.matcher(file.getName()).matches();
+  }
+
+  public RegexAssociation(String pattern, String name, String icon) {
+    super(name, icon);
+    this.pattern = pattern;
   }
 }
