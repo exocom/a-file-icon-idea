@@ -108,7 +108,7 @@ public final class TintedIconsComponent implements DynamicPluginListener, AppLif
   }
 
   private static ColorUIResource getThemedColor() {
-    return new ColorUIResource(JBColor.namedColor("Label.infoForeground", UIUtil.getContextHelpForeground()));
+    return new ColorUIResource(JBColor.namedColor("TextField.caretForeground", UIUtil.getContextHelpForeground()));
   }
 
   private static ColorUIResource getTintedColor() {
