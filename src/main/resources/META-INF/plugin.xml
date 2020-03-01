@@ -38,11 +38,11 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.mallowigi.config.AtomFileIconsConfig"/>
-        <applicationService serviceImplementation="com.mallowigi.config.UserConfig"/>
+        <applicationService serviceImplementation="com.mallowigi.userconfig.UserConfig"/>
         <applicationConfigurable instance="com.mallowigi.config.Configurable"
                                  groupId="appearance"
                                  id="com.mallowigi.config"/>
-        <applicationConfigurable instance="com.mallowigi.config.Configurable"
+        <applicationConfigurable instance="com.mallowigi.userconfig.Configurable"
                                  groupId="appearance"
                                  id="com.mallowigi.userconfig"/>
         <iconProvider implementation="com.mallowigi.icons.HiddenIconProvider" order="first"
